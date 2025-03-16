@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Text Summarizer</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='script.js') }}"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Text Summarizer</h1>
+            <p>Simplify your text with AI-powered summarization.</p>
+        </header>
+
+        <div class="input-section">
+            <div class="count" id="text-count">0 characters, 0 words</div>
+            <textarea id="text" placeholder="Paste your text here..." oninput="updateCount()"></textarea>
+            <button type="button" onclick="summarizer()">
+                <span id="button-text">Summarize</span>
+                <div id="loading-spinner" class="spinner"></div>
+            </button>
+        </div>
+
+        <div class="output-section">
+            <h3>Summarized Text</h3>
+            <div class="summarize-count" id="summarize-count">0 words</div>
+            <div class="summarize-container" id="summarize-container">
+                <div id="summarize_text"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
